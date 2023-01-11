@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      //1. Сделать собственные примеры методов применяемых для массивов. всі методи з папки array methods
+      var films = [
+        "Велика гра",
+        "Зелена книга",
+        "Форд проти Феррарі",
+        "Топ Ган:Маверік",
+      ];
+      //Join
+      var newFilmsList = films.join(", ");
+      document.write("My films: " + newFilmsList);
+      //concat
+      var addFilms = films.concat("Реальна сталь", "Пасажири");
+      document.write("<br>" + addFilms);
+      //reverse
+      var reverseList = films.reverse();
+      document.write("<br>" + reverseList);
+      //slice відкинули 2 фільма по краям масива
+      var pieceOfList = films.slice(1, -1);
+      document.write("<br>" + pieceOfList);
+      //splice
+      var deleteFilms = films.splice(0, 2);
+      document.write("<br>" + "Remain only: " + deleteFilms);
+      films.splice(0, 0, "Taxi", "Taxi 2");
+      //push
+      films.push("Форсаж 8");
+      document.write("<br>" + films);
+      //pop
+      var deletedFilm = films.pop();
+      document.write("<br>" + films);
+      document.write("<br>" + "Added :" + deletedFilm);
+      //unshift
+      films.unshift("Гнів людський");
+      document.write("<br>" + films);
+      //shift
+      var delFirst = films.shift();
+      document.write("<br>" + films);
+      document.write("<br>" + "Deleted: " + delFirst);
+      // 3. Определить элементы массива и вывести их значения, индексы которых лежит в указанном пределе. Предел вводит пользователь.
+      var fruits = [
+        "apples",
+        "oranges",
+        "lemons",
+        "pineapples",
+        "banannas",
+        "apricots",
+        "plums",
+        "chery",
+        "kiwi",
+        "mamngo",
+      ];
+      alert("You can buy this fruits: " + fruits.join(" , "));
+      var firstIndex = +prompt("Set a number of your first fruit");
+      var secondIndex = +prompt("Set a number of your last fruit");
+      var clientList = fruits.slice(firstIndex, secondIndex);
+      clientList.join(" , ");
+      document.write("<br>" + "You select this fruits: " + clientList);
+      // 4. Отсортировать массив на 10 чисел в порядке возростания. Значения принимаются от пользователя. Сортировка осушествляется методом sort().
+      var array = new Array();
+      for (var i = 1; i <= 10; i++) {
+        number = prompt("Write diferent numbers 10 times");
+        console.log(number);
+        array.push(number);
+      }
+      var sortedArray = array.sort(function (a, b) {
+        return a - b;
+      });
+      document.write(sortedArray);
+      //  5. Создать программу, выполняющую вставку элемента в массив после элемента, значение которого укажет пользователь.
+      var exoticCars = ["Aston Martin", "McLaren", "Lamborghini", "Maserati"];
+      console.log("Список авто: ");
+      newCar = prompt("Введите название новой марки автомобиля");
+      j = +prompt("Введите номер авто");
+      if (j < 0 || j > 4) {
+        alert("Please, enter number 1 - 4");
+      }
+      exoticCars.splice(j, 0, newCar);
+      console.log("Оновлений список: " + exoticCars);
+      //6. Необходимо получить предпоследний элемент из массива month и вывести его на экран.
+      var month = [
+        "Январь",
+        "Февраль",
+        "Март",
+        "Апрель",
+        "Май",
+        "Июнь",
+        "Июль",
+        "Август",
+        "Сентябрь",
+        "Октябрь",
+        "Ноябрь",
+        "Декабрь",
+      ];
+      alert(month[month.length - 2]);
+      //month.slice(10, 11);
+    </script>
+  </head>
+  <body></body>
+</html>
